@@ -1,5 +1,7 @@
 package com.example.daniel.beertagappfrontend.http;
 
+import android.content.Context;
+
 import java.io.IOException;
 
 import okhttp3.Credentials;
@@ -10,13 +12,13 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
-import static com.example.daniel.beertagappfrontend.constants.Constants.BASE_SERVER_URL;
-import static com.example.daniel.beertagappfrontend.constants.Constants.MYUSERNAME_SERVER_URL;
-import static com.example.daniel.beertagappfrontend.constants.Constants.USER_SERVER_URL;
+import static com.example.daniel.beertagappfrontend.utils.Constants.BASE_SERVER_URL;
+import static com.example.daniel.beertagappfrontend.utils.Constants.MYUSERNAME_SERVER_URL;
+import static com.example.daniel.beertagappfrontend.utils.Constants.USER_SERVER_URL;
 
 public class OkHttpHttpRequester implements HttpRequester {
 
-    public OkHttpHttpRequester() {
+    public OkHttpHttpRequester(Context context) {
     }
 
     @Override

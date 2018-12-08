@@ -1,4 +1,4 @@
-package com.example.daniel.beertagappfrontend.constants;
+package com.example.daniel.beertagappfrontend.utils;
 
 public class Constants {
 
