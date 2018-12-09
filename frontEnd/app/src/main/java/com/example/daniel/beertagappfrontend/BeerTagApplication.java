@@ -7,15 +7,21 @@ import com.example.daniel.beertagappfrontend.async.AsyncSchedulerProvider;
 import com.example.daniel.beertagappfrontend.async.base.SchedulerProvider;
 import com.example.daniel.beertagappfrontend.http.HttpRequester;
 import com.example.daniel.beertagappfrontend.http.OkHttpHttpRequester;
+import com.example.daniel.beertagappfrontend.models.Beer;
 import com.example.daniel.beertagappfrontend.models.User;
 import com.example.daniel.beertagappfrontend.parsers.GsonJsonParser;
 import com.example.daniel.beertagappfrontend.parsers.base.JsonParser;
+import com.example.daniel.beertagappfrontend.repositories.HttpBeerRepository;
 import com.example.daniel.beertagappfrontend.repositories.HttpUserRepository;
+import com.example.daniel.beertagappfrontend.repositories.base.BeerRepository;
 import com.example.daniel.beertagappfrontend.repositories.base.UserLoginRepository;
+import com.example.daniel.beertagappfrontend.services.HttpBeerService;
 import com.example.daniel.beertagappfrontend.services.HttpUsersService;
+import com.example.daniel.beertagappfrontend.services.base.BeerService;
 import com.example.daniel.beertagappfrontend.services.base.UsersService;
 
 import static com.example.daniel.beertagappfrontend.utils.Constants.BASE_SERVER_URL;
+import static com.example.daniel.beertagappfrontend.utils.Constants.BEER_SERVER_URL;
 import static com.example.daniel.beertagappfrontend.utils.Constants.USER_SERVER_URL;
 
 public class BeerTagApplication extends Application {
@@ -23,9 +29,16 @@ public class BeerTagApplication extends Application {
     private static SchedulerProvider mSchedulerProvider;
     private static HttpRequester mHttpRequester;
     private static JsonParser<User> mJsonParserUser;
+    private static JsonParser<Beer> mJsonParserBeer;
     private static UserLoginRepository<User> mUserRepository;
-    private static UsersService mUserService;
+    private static BeerRepository<Beer> mBeerRepository;
+    private static UsersService<User> mUserService;
+    private static BeerService<Beer> mBeerService;
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
 
     public static SchedulerProvider getSchedulerProvider() {
         if (mSchedulerProvider == null)
@@ -48,6 +61,16 @@ public class BeerTagApplication extends Application {
         return mJsonParserUser;
     }
 
+    public static JsonParser<Beer> gerJsonParserBeer() {
+        if (mJsonParserBeer == null) {
+
+            mJsonParserBeer = new GsonJsonParser<>(Beer.class, Beer[].class);
+        }
+
+        return mJsonParserBeer;
+    }
+
+
     public static UserLoginRepository<User> getUsersRepository(Context context) {
 
         if (mUserRepository == null) {
@@ -55,13 +78,31 @@ public class BeerTagApplication extends Application {
             HttpRequester httpRequester = getHttpRequester(context);
             JsonParser<User> jsonParser = getJsonParserUser();
 
-          mUserRepository = new HttpUserRepository<>(
-                  httpRequester,
-                  url,
-                  jsonParser
-          );
+
+            mUserRepository = new HttpUserRepository<>(
+                    httpRequester,
+                    url,
+                    jsonParser
+            );
         }
-            return mUserRepository;
+        return mUserRepository;
+    }
+
+    public static BeerRepository<Beer> getmBeerRepository(Context context) {
+
+        if (mBeerRepository == null) {
+            String url = BASE_SERVER_URL + BEER_SERVER_URL;
+            HttpRequester httpRequester = getHttpRequester(context);
+            JsonParser<Beer> jsonParser = gerJsonParserBeer();
+
+            mBeerRepository = new HttpBeerRepository<>(
+                    httpRequester,
+                    url,
+                    jsonParser
+            );
+        }
+
+            return mBeerRepository;
     }
 
     public static UsersService<User> getUsersService(Context context) {
@@ -69,6 +110,14 @@ public class BeerTagApplication extends Application {
             mUserService = new HttpUsersService(context);
 
         return mUserService;
+    }
+
+    public static BeerService<Beer> getmBeerService(Context context){
+        if(mBeerService == null)
+            mBeerService = new HttpBeerService(context);
+
+        return mBeerService;
+
     }
 
 

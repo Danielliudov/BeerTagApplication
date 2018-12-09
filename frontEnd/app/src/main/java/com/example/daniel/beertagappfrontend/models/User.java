@@ -8,10 +8,11 @@ import java.util.Set;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable {
-    private Long id;
+    private int id;
     private String username;
     private String password;
     private Set<Role> role;
+    private Set<Beer> beerHasDrank;
 
 
     public User() {
@@ -24,11 +25,11 @@ public class User implements Serializable {
         setPassword(password);
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -54,5 +55,13 @@ public class User implements Serializable {
 
     public void setRole(Set<Role> role) {
         this.role = role;
+    }
+
+    public Set<Beer> getBeerHasDrank() {
+        return new HashSet<>(beerHasDrank);
+    }
+
+    public void setBeerHasDrank(Set<Beer> beerHasDrank) {
+        this.beerHasDrank = beerHasDrank;
     }
 }
