@@ -1,4 +1,4 @@
-package com.example.daniel.beertagappfrontend.views;
+package com.example.daniel.beertagappfrontend.views.login;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,7 +17,9 @@ import android.widget.Toast;
 
 import com.example.daniel.beertagappfrontend.R;
 import com.example.daniel.beertagappfrontend.models.User;
+import com.example.daniel.beertagappfrontend.utils.Constants;
 import com.example.daniel.beertagappfrontend.utils.enums.ErrorCode;
+import com.example.daniel.beertagappfrontend.views.home.HomePage;
 
 import java.util.Map;
 import java.util.Set;
@@ -77,6 +79,7 @@ public class LoginActivity extends AppCompatActivity implements SmartLoginCallba
         setContentView(R.layout.activity_login);
 
         ButterKnife.bind(this, this);
+        getSupportActionBar().hide();
 
 
         mConfig = new SmartLoginConfig(this, this);
@@ -113,15 +116,11 @@ public class LoginActivity extends AppCompatActivity implements SmartLoginCallba
     }
 
 
-
-
-
     @OnClick(R.id.btn_login)
     void customLoginClicked() {
         mSmartLogin = SmartLoginFactory.build(LoginType.CustomLogin);
         mSmartLogin.login(mConfig);
     }
-
 
 
     @Override
@@ -181,14 +180,16 @@ public class LoginActivity extends AppCompatActivity implements SmartLoginCallba
     }
 
     @Override
-    public Activity getActivity()
-    {
+    public Activity getActivity() {
         return this;
     }
 
     @Override
     public void navigateToHome(User user) {
-        Toast.makeText(this, "Username is logged successfuly", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, HomePage.class);
+        intent.putExtra(Constants.USER_OBJ_EXTRA, user);
+        startActivity(intent);
+        finish();
     }
 
     @Override
@@ -198,7 +199,7 @@ public class LoginActivity extends AppCompatActivity implements SmartLoginCallba
 
     @Override
     public void onLoginFailure(SmartLoginException e) {
-        Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        //   Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -216,10 +217,6 @@ public class LoginActivity extends AppCompatActivity implements SmartLoginCallba
     public SmartUser doCustomSignup() {
         return null;
     }
-
-
-
-
 
 
 }

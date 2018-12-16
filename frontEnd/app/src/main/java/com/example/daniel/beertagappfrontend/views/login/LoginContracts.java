@@ -1,4 +1,4 @@
-package com.example.daniel.beertagappfrontend.views;
+package com.example.daniel.beertagappfrontend.views.login;
 
 import android.app.Activity;
 import android.support.design.widget.TextInputLayout;

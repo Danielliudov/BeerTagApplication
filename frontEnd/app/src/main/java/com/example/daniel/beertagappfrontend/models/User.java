@@ -1,5 +1,7 @@
 package com.example.daniel.beertagappfrontend.models;
 
+import android.support.annotation.NonNull;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
@@ -11,18 +13,15 @@ public class User implements Serializable {
     private int id;
     private String username;
     private String password;
-    private Set<Role> role;
-    private Set<Beer> beerHasDrank;
-
+    private Set<Role> roles;
 
     public User() {
-
+        // keep empty pls
     }
 
-
     public User(String username, String password) {
-        setUsername(username);
-        setPassword(password);
+        this.username = username;
+        this.password = password;
     }
 
     public int getId() {
@@ -49,19 +48,18 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Set<Role> getRole() {
-        return new HashSet<>(role);
+
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(Set<Role> role) {
-        this.role = role;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 
-    public Set<Beer> getBeerHasDrank() {
-        return new HashSet<>(beerHasDrank);
-    }
-
-    public void setBeerHasDrank(Set<Beer> beerHasDrank) {
-        this.beerHasDrank = beerHasDrank;
+    @NonNull
+    @Override
+    public String toString() {
+        return username;
     }
 }

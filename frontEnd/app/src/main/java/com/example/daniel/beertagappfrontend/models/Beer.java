@@ -19,14 +19,14 @@ public class Beer implements Serializable {
 
     }
 
-    public Beer(String name, String brandname, String country, int abv, String description, String style, String picture) {
+    public Beer(String name, String brandname, String country, int abv, String description, String style) {
         this.name = name;
         this.brandname = brandname;
         this.country = country;
         this.abv = abv;
         this.description = description;
         this.style = style;
-        this.picture = picture;
+
     }
 
 

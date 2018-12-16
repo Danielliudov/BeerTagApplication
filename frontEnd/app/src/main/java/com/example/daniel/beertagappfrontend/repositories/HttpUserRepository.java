@@ -25,7 +25,7 @@ public class HttpUserRepository<T> implements UserLoginRepository<T> {
     @Override
     public List<T> getAll() throws Exception {
 
-        final String url = mUserEndPoint + "/getAll";
+        final String url = mUserEndPoint + "/secured/all";
 
         String json = mHttpRequester.get(url);
 
@@ -35,7 +35,7 @@ public class HttpUserRepository<T> implements UserLoginRepository<T> {
 
     @Override
     public T getById(int id) throws IOException {
-        final String url = mUserEndPoint + "/get/" + id;
+        final String url = mUserEndPoint + "/" + id;
 
         String json = mHttpRequester.get(url);
 
@@ -45,7 +45,7 @@ public class HttpUserRepository<T> implements UserLoginRepository<T> {
     @Override
     public T add(T item) throws Exception {
 
-        final String url = mUserEndPoint + "/sign";
+        final String url = mUserEndPoint + "/signup";
         String requestBody = mUsersJsonParser.toJson(item);
         String respondBody = mHttpRequester.post(url, requestBody);
 
@@ -56,7 +56,7 @@ public class HttpUserRepository<T> implements UserLoginRepository<T> {
     @Override
     public T login(String username, String password) throws IOException {
 
-        String responseBody = mHttpRequester.login(username,password);
+        String responseBody = mHttpRequester.login(username, password);
 
         return mUsersJsonParser.fromJson(responseBody);
     }

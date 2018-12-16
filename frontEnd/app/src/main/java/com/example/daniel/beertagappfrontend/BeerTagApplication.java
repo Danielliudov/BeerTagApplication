@@ -19,6 +19,10 @@ import com.example.daniel.beertagappfrontend.services.HttpBeerService;
 import com.example.daniel.beertagappfrontend.services.HttpUsersService;
 import com.example.daniel.beertagappfrontend.services.base.BeerService;
 import com.example.daniel.beertagappfrontend.services.base.UsersService;
+import com.franmontiel.persistentcookiejar.ClearableCookieJar;
+import com.franmontiel.persistentcookiejar.PersistentCookieJar;
+import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
+import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 
 import static com.example.daniel.beertagappfrontend.utils.Constants.BASE_SERVER_URL;
 import static com.example.daniel.beertagappfrontend.utils.Constants.BEER_SERVER_URL;
@@ -34,6 +38,7 @@ public class BeerTagApplication extends Application {
     private static BeerRepository<Beer> mBeerRepository;
     private static UsersService<User> mUserService;
     private static BeerService<Beer> mBeerService;
+    private static ClearableCookieJar mCookieJar;
 
     @Override
     public void onCreate() {
@@ -74,7 +79,7 @@ public class BeerTagApplication extends Application {
     public static UserLoginRepository<User> getUsersRepository(Context context) {
 
         if (mUserRepository == null) {
-            String url = BASE_SERVER_URL + USER_SERVER_URL;
+            String url = BASE_SERVER_URL + "/users";
             HttpRequester httpRequester = getHttpRequester(context);
             JsonParser<User> jsonParser = getJsonParserUser();
 
@@ -91,7 +96,7 @@ public class BeerTagApplication extends Application {
     public static BeerRepository<Beer> getmBeerRepository(Context context) {
 
         if (mBeerRepository == null) {
-            String url = BASE_SERVER_URL + BEER_SERVER_URL;
+            String url = BASE_SERVER_URL + "/beers";
             HttpRequester httpRequester = getHttpRequester(context);
             JsonParser<Beer> jsonParser = gerJsonParserBeer();
 
@@ -102,7 +107,7 @@ public class BeerTagApplication extends Application {
             );
         }
 
-            return mBeerRepository;
+        return mBeerRepository;
     }
 
     public static UsersService<User> getUsersService(Context context) {
@@ -112,12 +117,18 @@ public class BeerTagApplication extends Application {
         return mUserService;
     }
 
-    public static BeerService<Beer> getmBeerService(Context context){
-        if(mBeerService == null)
+    public static BeerService<Beer> getmBeerService(Context context) {
+        if (mBeerService == null)
             mBeerService = new HttpBeerService(context);
 
         return mBeerService;
 
+    }
+
+    public static ClearableCookieJar getCookieJar(Context ctx) {
+        if (mCookieJar == null)
+            mCookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(ctx));
+        return mCookieJar;
     }
 
 

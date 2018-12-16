@@ -8,8 +8,6 @@ public class Constants {
     public static final int USERNAME_MAX_LENGTH = 50;
 
 
-
-
     //Strings
     public static final String BASE_SERVER_URL = "http://192.168.1.5:8080/api";
 
@@ -18,5 +16,8 @@ public class Constants {
     public static final String BEER_SERVER_URL = "/beers";
 
     public static final String MYUSERNAME_SERVER_URL = "/myusername";
+
+
+    public static final String USER_OBJ_EXTRA = "USER_EXTRA";
 
 }

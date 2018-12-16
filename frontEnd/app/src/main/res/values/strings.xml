@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BeerTagAppFrontEnd</string>
+    <string name="open">BeerTagAppFrontEnd</string>
+    <string name="close">BeerTagAppFrontEnd</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

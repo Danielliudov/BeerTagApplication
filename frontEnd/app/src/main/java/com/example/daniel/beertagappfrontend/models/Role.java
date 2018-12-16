@@ -10,7 +10,7 @@ public class Role implements Serializable {
 
     }
 
-    public Role(int id, String roleName){
+    public Role(int id, String roleName) {
         setId(id);
         setRoleName(roleName);
     }

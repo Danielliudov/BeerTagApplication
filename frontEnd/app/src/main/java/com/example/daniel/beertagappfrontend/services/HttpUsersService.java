@@ -30,6 +30,6 @@ public class HttpUsersService implements UsersService<User> {
 
     @Override
     public User login(String username, String password) throws IOException {
-        return userUserLoginRepository.login(username,password);
+        return userUserLoginRepository.login(username, password);
     }
 }

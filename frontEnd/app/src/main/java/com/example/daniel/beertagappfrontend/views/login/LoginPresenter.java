@@ -1,4 +1,4 @@
-package com.example.daniel.beertagappfrontend.views;
+package com.example.daniel.beertagappfrontend.views.login;
 
 
 import android.content.Context;
@@ -28,12 +28,11 @@ public class LoginPresenter implements LoginContracts.Presenter {
     private final LoginValidator mLoginValidator;
 
 
-    public LoginPresenter(Context context){
+    public LoginPresenter(Context context) {
         mUsersService = BeerTagApplication.getUsersService(context);
         mSchedulerProvider = BeerTagApplication.getSchedulerProvider();
         mLoginValidator = new RegisterValidator();
     }
-
 
 
     @Override
@@ -58,10 +57,10 @@ public class LoginPresenter implements LoginContracts.Presenter {
                     .subscribeOn(mSchedulerProvider.background())
                     .observeOn(mSchedulerProvider.ui())
                     .doOnEach(x -> mView.hideLoading())
-                    .doOnError(e -> mView.showError(e))
-                    .subscribe(s -> mView.navigateToHome(s));
+                    .subscribe(s -> mView.navigateToHome(s), e -> mView.showError(e));
         }
     }
+
     @Override
     public void subscribe(LoginContracts.View view) {
         mView = view;
