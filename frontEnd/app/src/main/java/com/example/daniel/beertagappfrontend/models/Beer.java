@@ -6,10 +6,10 @@ public class Beer implements Serializable {
 
 
     private int id;
-    private String name;
-    private String brandname;
+    private String beername;
+    private String brand;
     private String country;
-    private int abv;
+    private String abv;
     private String description;
     private String style;
     private String picture;
@@ -19,14 +19,13 @@ public class Beer implements Serializable {
 
     }
 
-    public Beer(String name, String brandname, String country, int abv, String description, String style) {
-        this.name = name;
-        this.brandname = brandname;
+    public Beer(String beername, String brand, String country, String abv, String description, String style) {
+        this.beername = beername;
+        this.brand = brand;
         this.country = country;
         this.abv = abv;
         this.description = description;
         this.style = style;
-
     }
 
 
@@ -38,20 +37,20 @@ public class Beer implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getBeerName() {
+        return beername;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBeerName(String beername) {
+        this.beername = beername;
     }
 
-    public String getBrandname() {
-        return brandname;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setBrandname(String brandname) {
-        this.brandname = brandname;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public String getCountry() {
@@ -62,11 +61,11 @@ public class Beer implements Serializable {
         this.country = country;
     }
 
-    public int getAbv() {
+    public String getAbv() {
         return abv;
     }
 
-    public void setAbv(int abv) {
+    public void setAbv(String abv) {
         this.abv = abv;
     }
 

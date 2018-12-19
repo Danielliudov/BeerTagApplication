@@ -9,7 +9,7 @@ public class Constants {
 
 
     //Strings
-    public static final String BASE_SERVER_URL = "http://192.168.1.5:8080/api";
+    public static final String BASE_SERVER_URL = "http://192.168.1.5:9090/api";
 
     public static final String USER_SERVER_URL = "/users";
 
@@ -19,5 +19,7 @@ public class Constants {
 
 
     public static final String USER_OBJ_EXTRA = "USER_EXTRA";
+
+    public static final String BEER_OBJ_EXTRA = "BEER_EXTRA";
 
 }

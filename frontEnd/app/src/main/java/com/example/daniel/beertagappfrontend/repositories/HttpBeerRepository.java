@@ -23,21 +23,17 @@ public class HttpBeerRepository<T> implements BeerRepository<T> {
 
     @Override
     public List<T> getAll() throws Exception {
-        final String url = mBeerEndPoint + "/getAll";
-
-        String json = mHttpRequester.get(url);
-
-        return mBeerJsonParser.fromJsonArray(json);
+        String jsonArray = null;
+        jsonArray = mHttpRequester.get(mBeerEndPoint + "/secured/all");
+        return mBeerJsonParser.fromJsonArray(jsonArray);
     }
 
 
     @Override
     public T add(T item) throws Exception {
-        final String url = mBeerEndPoint + "/addBeer";
         String requestBody = mBeerJsonParser.toJson(item);
-        String respondBody = mHttpRequester.post(url, requestBody);
-
-        return mBeerJsonParser.fromJson(respondBody);
+        String responseBody = mHttpRequester.post(mBeerEndPoint + "/addBeer", requestBody);
+        return mBeerJsonParser.fromJson(responseBody);
     }
 
     @Override

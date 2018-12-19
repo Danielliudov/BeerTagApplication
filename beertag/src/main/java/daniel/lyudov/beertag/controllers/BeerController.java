@@ -21,18 +21,18 @@ public class BeerController {
 
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/secured/all")
-    public List<Beer> getAllBeer(){
+    public List<Beer> getAllBeer() {
         return beerService.getAll();
     }
 
     @ResponseBody
     @PostMapping("/addBeer")
-    public Beer add(@RequestBody Beer beer){
-      return beerService.add(beer);
+    public Beer add(@RequestBody Beer beer) {
+        return beerService.add(beer);
     }
 
-   @DeleteMapping("/delete/{beer}")
-    public void deleteBeer(@PathVariable Beer beer){
+    @DeleteMapping("/delete/{beer}")
+    public void deleteBeer(@PathVariable Beer beer) {
         beerService.delete(beer);
     }
 

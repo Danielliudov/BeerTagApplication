@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.BeerDetails.BeerDetails"
+    android:gravity="bottom"
+    >
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl_beerdetail_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/background_shape"
+        />
+        <ImageView
+            android:id="@+id/beerdetail_image"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_cheers"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/rl_beerdetail_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="bottom">
+
+        <TextView
+            android:id="@+id/beer_brand_tv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/textview_shape_color"            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="Brand:"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            />
+
+        <TextView
+            android:id="@+id/beer_country_tv"
+            android:layout_below="@+id/beer_brand_tv"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/textview_shape_color"            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="Origin:"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            />
+
+        <TextView
+            android:id="@+id/beer_abv_tv"
+            android:layout_below="@+id/beer_country_tv"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/textview_shape_color"            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="Abv:"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            />
+        <TextView
+            android:id="@+id/beer_style_tv"
+            android:layout_below="@+id/beer_abv_tv"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/textview_shape_color"            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="Style:"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            />
+
+
+        <TextView
+            android:id="@+id/beer_description_tv"
+            android:layout_below="@+id/beer_style_tv"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/gray"
+            android:text="Description:"
+
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

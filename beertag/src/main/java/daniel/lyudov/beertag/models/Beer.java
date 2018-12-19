@@ -23,14 +23,13 @@ public class Beer {
     @NotNull(message = "Brand can't be null")
     private String brand;
 
-
     @Column(name = "Country")
     @NotNull(message = "Origin Country can't be null")
     private String country;
 
     @Column(name = "Abv")
     @NotNull(message = "ABC % can't be null")
-    private int abv;
+    private String abv;
 
     @Column(name = "Description")
     @NotNull(message = "Description can't be null")
@@ -46,7 +45,7 @@ public class Beer {
     private String photo;
 
 
-    public Beer(){
+    public Beer() {
 
     }
 
@@ -73,8 +72,8 @@ public class Beer {
         return this.beername;
     }
 
-    public void setBeername(String beername) {
-        this.beername = beername;
+    public void setBeername(String beerName) {
+        this.beername = beerName;
     }
 
     public String getBrand() {
@@ -93,11 +92,11 @@ public class Beer {
         this.country = country;
     }
 
-    public int getAbv() {
+    public String getAbv() {
         return this.abv;
     }
 
-    public void setAbv(int abv) {
+    public void setAbv(String abv) {
         this.abv = abv;
     }
 

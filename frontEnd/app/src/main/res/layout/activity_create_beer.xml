@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.BeerCreate.CreateBeerActivity"
+    android:id="@+id/add_beer_fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background_shape">
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter name"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"
+            />
+
+        <EditText
+            android:id="@+id/et_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter brand"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"/>
+
+        <EditText
+            android:id="@+id/et_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter country"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"/>
+
+        <EditText
+            android:id="@+id/et_abv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter alcohol by volume"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"/>
+
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter description"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"/>
+
+        <EditText
+            android:id="@+id/et_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter style"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <Button
+                android:id="@+id/btn_add_picture"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_shape"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:text="+ add picture"
+                />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_save_beer"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_shape"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:text="save"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
