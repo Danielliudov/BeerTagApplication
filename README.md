@@ -12,18 +12,18 @@ SDK:24 and above (Android version 7.0 and above).
 
 Screenshots:
 	
-<div >
+<div display: inline-block;>
 
-<div style="float: left;" >
+<div >
     <img src="/appImages/pic.PNG" width="200px" </img> 
 </div>
-<div style="float: left;">
+<div >
     <img src="/appImages/2.PNG" width="200px" </img> 
 </div>
-<div style="float: left;">
+<div>
 <img src="/appImages/3.PNG" width="200px" </img> 
 </div>
-<div style="float: left;">
+<div>
     <img src="/appImages/4.PNG" width="200px"</img> 
 </div>
 
