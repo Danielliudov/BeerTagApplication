@@ -12,14 +12,20 @@ SDK:24 and above (Android version 7.0 and above).
 
 Screenshots:
 	
-<div align="center">
-    <img src="/appImages/pic.PNG" width="200px" height="200px"</img> 
+<div >
 
-    <img src="/appImages/2.PNG" width="200px" height="200px"</img> 
-
-<img src="/appImages/3.PNG" width="200px" height="200px"</img> 
-
-    <img src="/appImages/4.PNG" width="200px" height="200px"</img> 
+<div >
+    <img src="/appImages/pic.PNG" width="200px" </img> 
+</div>
+<div>
+    <img src="/appImages/2.PNG" width="200px" </img> 
+</div>
+<div>
+<img src="/appImages/3.PNG" width="200px" </img> 
+</div>
+<div>
+    <img src="/appImages/4.PNG" width="200px"</img> 
+</div>
 
 </div>
 
