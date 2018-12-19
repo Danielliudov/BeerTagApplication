@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.daniel.beertagappfrontend.BeerTagApplication;
 import com.example.daniel.beertagappfrontend.R;
 import com.example.daniel.beertagappfrontend.models.Beer;
 import com.example.daniel.beertagappfrontend.models.User;
@@ -25,6 +26,7 @@ import com.example.daniel.beertagappfrontend.utils.Constants;
 import com.example.daniel.beertagappfrontend.views.BeerCreate.CreateBeerActivity;
 import com.example.daniel.beertagappfrontend.views.BeerDetails.BeerDetails;
 import com.example.daniel.beertagappfrontend.views.home.recycler.BeerAdapter;
+import com.example.daniel.beertagappfrontend.views.login.LoginActivity;
 
 import java.util.List;
 
@@ -111,10 +113,28 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             startActivity(intent);
             finish();
 
+
+
             //TODO implement the other MenuItems selection
         }
 
+        else if(id == R.id.logout_dw){
+            BeerTagApplication.getCookieJar(this).clear();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        BeerTagApplication.getCookieJar(this).clear();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+
     }
 
 
