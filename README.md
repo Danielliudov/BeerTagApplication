@@ -14,16 +14,16 @@ Screenshots:
 	
 <div >
 
-<div >
+<div style="float: left;" >
     <img src="/appImages/pic.PNG" width="200px" </img> 
 </div>
-<div>
+<div style="float: left;">
     <img src="/appImages/2.PNG" width="200px" </img> 
 </div>
-<div>
+<div style="float: left;">
 <img src="/appImages/3.PNG" width="200px" </img> 
 </div>
-<div>
+<div style="float: left;">
     <img src="/appImages/4.PNG" width="200px"</img> 
 </div>
 
