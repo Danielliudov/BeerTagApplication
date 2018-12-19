@@ -11,7 +11,10 @@ To be implemented:User changing profile photo, search beers by some creteria, an
 SDK:24 and above (Android version 7.0 and above).
 
 Screenshots:
-![Alt text](/../<master>/appImages/1.png?raw=true "Optional Title")
+	
+<div align="center">
+    <img src="/appImages/1.jpg" width="400px"</img> 
+</div>
 
  
  
