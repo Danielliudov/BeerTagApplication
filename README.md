@@ -13,7 +13,7 @@ SDK:24 and above (Android version 7.0 and above).
 Screenshots:
 	
 <div align="center">
-    <img src="/appImages/1.jpg" width="400px"</img> 
+    <img src="/appImages/pic.PNG" width="400px"</img> 
 </div>
 
  
